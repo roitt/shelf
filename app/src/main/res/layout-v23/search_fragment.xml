@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/search_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/back"
+                    android:layout_width="@dimen/toolbar_ic_size"
+                    android:layout_height="@dimen/toolbar_ic_size"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24px"
+                    android:layout_marginStart="@dimen/element_spacing"
+                    android:tint="@color/colorAccent"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search for movies or series"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:background="@android:color/transparent"
+                    android:textSize="@dimen/search_field_text_size"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/element_spacing"/>
+
+            </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_wrapper" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
